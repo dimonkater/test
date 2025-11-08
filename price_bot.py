@@ -9,10 +9,11 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, fil
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 import random
+import os
 
 # 🔑 Вставь свои ключи сюда
-OPENAI_API_KEY = "YOUR_OPENAI_API_KEY"
-TELEGRAM_BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
