@@ -13,7 +13,6 @@ import os
 # 🔑 Вставь свои ключи сюда
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
-client = OpenAI(api_key=OPENAI_API_KEY)
 
 # ==============================
 # 🛒 Эмуляция парсинга магазинов
