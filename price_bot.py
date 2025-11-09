@@ -38,10 +38,17 @@ def fake_parser(query: str):
 # ==============================
 # 🧠 AI-модуль для сравнения
 # ==============================
-def get_embedding(text: str):
-    """Получает embedding из OpenAI."""
-    resp = client.embeddings.create(model="text-embedding-3-small", input=text)
-    return resp.data[0].embedding
+from sentence_transformers import SentenceTransformer
+import numpy as np
+
+# Загружаем бесплатную модель эмбеддингов
+model = SentenceTransformer("all-MiniLM-L6-v2")
+
+def get_embedding(text):
+    # Получаем векторное представление текста
+    emb = model.encode(text)
+    return emb.tolist()
+
 
 
 def group_similar_products(products):
