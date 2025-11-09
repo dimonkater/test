@@ -3,7 +3,6 @@
 # ==============================
 
 import asyncio
-from openai import OpenAI
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
 from sklearn.metrics.pairwise import cosine_similarity
@@ -12,7 +11,6 @@ import random
 import os
 
 # 🔑 Вставь свои ключи сюда
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 
 client = OpenAI(api_key=OPENAI_API_KEY)
