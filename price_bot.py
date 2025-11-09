@@ -8,7 +8,8 @@ from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, fil
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 import random
-import os
+from sentence_transformers import SentenceTransformer
+import numpy as np
 
 # 🔑 Вставь свои ключи сюда
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
@@ -35,8 +36,6 @@ def fake_parser(query: str):
 # ==============================
 # 🧠 AI-модуль для сравнения
 # ==============================
-from sentence_transformers import SentenceTransformer
-import numpy as np
 
 # Загружаем бесплатную модель эмбеддингов
 model = SentenceTransformer("all-MiniLM-L6-v2")
